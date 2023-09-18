@@ -9,20 +9,29 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" ></script>
+    <!-- Font Awesome -->
+    
+    <link rel="stylesheet" href="{{ asset('css/contact.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/db948196a7.js"></script>
 
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    
+
+   
 <style>
   body{
-    min-height: 500vh;
+    background-image: linear-gradient(79deg, #268f8e, #83dfe3, #f6f0fc 48%, #94a7a8);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
   }
     .navi {
-      background-image: linear-gradient(79deg, #268f8e, #83dfe3, #f6f0fc 48%, #94a7a8);
+      background-image: linear-gradient(79deg, #268f8e 60%, #94a7a8);
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
