@@ -73,7 +73,7 @@
       </div>
     </div>
     
-    <div class="col-lg-6 col-md-12">
+    <div class="col-lg-6 col-md-12 p-5">
     <div class="p-3 contact-team" >
             
         </div></div>

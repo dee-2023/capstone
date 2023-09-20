@@ -1,0 +1,160 @@
+/* =======contacts========= */
+body{
+  background-image: linear-gradient(79deg, #268f8e, #83dfe3, #f6f0fc 48%, #94a7a8);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+  .navi {
+    background-image: linear-gradient(79deg, #268f8e 60%, #94a7a8);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  
+  }
+  .wrapper {
+  min-height: 100%;
+  position: relative;
+  margin-bottom: -100px; /* Height of the footer */
+}
+
+.content {
+margin: auto 0;
+  padding-bottom: 100px; /* Height of the footer */
+}
+
+footer {
+  min-height: 100px; /* Adjust this as needed */
+  background-color: #94a7a8; 
+  color: #fff; 
+  position:relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center; 
+  margin-top: auto;
+}
+.footer-content {
+  margin: 0 auto; 
+  max-width: 600px;
+}
+
+/* =======Layout========*/
+.contact-head {
+  background-image: url('../img/tourguide.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height:70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.text-container {
+  color: whitesmoke;
+  padding: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.contact-team {
+  background-image: url('../img/contact.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height:50vh;
+  width: 400px;
+  border-top-right-radius: 100px; 
+  border-bottom-left-radius: 100px; 
+  border: 2px solid #94a7a8;
+  box-shadow: 5px 10px 8px 5px #f6f0fc;
+
+}
+@media (max-width: 768px) {
+  .contact-head {
+    background-size: contain; /* Resize to contain within the container */
+    height: auto; /* Let the content determine the height */
+  }
+  .contact-team {
+    width: auto;
+    height: 50vh; 
+  }
+}
+
+/* =======Login========*/
+
+
+.loginbody{
+background-image: url('../img/shore.png');
+background-size: cover;
+background-repeat: no-repeat;
+height: 80vh;
+}
+
+.logincard{
+height: 300px;
+margin-top: auto;
+margin-bottom: auto;
+width: 350px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+.registercard{
+  height: 400px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 350px;
+  background-color: rgba(0,0,0,0.5) !important;
+  }
+
+.logincard-header h3{
+color: white;
+}
+
+
+.input-group-prepend span{
+width: 50px;
+background-color: #268f8e;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+color: black;
+background-color: #FFC312;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}

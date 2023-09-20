@@ -13,8 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    {{ __('You are logged in!') }}<br />
+                    <a class="btn btn-primary" href="{{ route('packages') }}">{{ __('Packages') }}</a>
+                    <a class="btn btn-primary" href="{{ route('shop') }}">{{ __('Shop') }}</a>
                 </div>
             </div>
         </div>

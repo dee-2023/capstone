@@ -15,15 +15,21 @@ use App\Http\Controllers\PackageController;
 |
 */
 
-Route::get('/', function () {return view('welcome'); });
+Route::get('/', function () {return view('welcome'); })->name('welcome');
 Route::get('/contact', function () {return view('contact'); });
 Route::get('/blog', function () {return view('blog'); });
-Route::get('/packages',[PackageController::class, 'index'])->name('packages');
 
+Route::get('/packages',[PackageController::class, 'index'])->name('packages');
+Route::get('/packages/book', [PackageController::class, 'book']);
+Route::post('/packages', [PackageController::class, 'store'])->name('postpackages');
+Route::get('/packages/{id}', [PackageController::class, 'show']);
+
+Route::get('/shop', [HomeController::class, 'shop'])->name('shop');
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('userhomepage');
+
 
 
 // admin
