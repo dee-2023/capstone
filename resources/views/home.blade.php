@@ -14,12 +14,17 @@
                         </div>
                     @endif
                     {{ __('You are logged in!') }}<br />
-                    <a class="btn btn-primary" href="{{ route('packages') }}">{{ __('Packages') }}</a>
+                    <a class="btn btn-primary" href="{{ route('booknow') }}">{{ __('Book a Tour') }}</a>
                     <a class="btn btn-primary" href="{{ route('shop') }}">{{ __('Shop') }}</a>
+                    <a class="btn btn-primary" href="{{ route('my-bookings') }}">{{ __('My Bookings') }}</a>
                 </div>
-            </div>
+
+                
+        </div>
         </div>
     </div>
+    <div class="card-body">
+        
 </div>
 @endsection
 

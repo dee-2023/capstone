@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Package extends Model
+class Booking extends Model
 {
     protected $casts = [
-        'inclusions' => 'array'
+        'inclusions' => 'array',
     ];
 }
  

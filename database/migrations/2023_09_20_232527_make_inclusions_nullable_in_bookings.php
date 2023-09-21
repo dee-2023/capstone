@@ -11,17 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('packages', function (Blueprint $table) {
-           
-            
-            $table->date('booking_date');
-           
-           
-            $table->string('title');
-            $table->string('name');
-            $table->json('inclusions');
-        
-            
+        Schema::table('bookings', function (Blueprint $table) {
+        $table->text('inclusions')->nullable()->change();
         });
     }
 
@@ -30,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('packages', function (Blueprint $table) {
+        Schema::table('bookings', function (Blueprint $table) {
             //
         });
     }

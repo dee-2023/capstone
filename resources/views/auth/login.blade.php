@@ -5,17 +5,17 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="logincard card">
 			<div class="card-header logincard-header">
-				<h3>{{ __('Login') }}</h3>
-				
+				<h3>{{ __('Login') }}</h3>	
 			</div>
+            
 			<div class="card-body">
 				<form method="POST" action="{{ route('login') }}">
                     @csrf
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-user"></i></span>
+							<span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
 						</div>
-						<input  type="email" 
+						<input  type="email" name="email"
                                 class="form-control @error('email') is-invalid @enderror" 
                                 placeholder="{{ __('Email Address') }}" 
                                 value="{{ old('email') }}" 
@@ -32,7 +32,7 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input  type="password" 
+						<input  type="password" name="password"
                                 class="form-control @error('password') is-invalid @enderror" 
                                 required 
                                 autocomplete="current-password" 

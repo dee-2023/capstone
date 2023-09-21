@@ -158,3 +158,9 @@ color: white;
 .links a{
 margin-left: 4px;
 }
+
+/* =======packages card========*/
+.cstm-height-card .card-img-top {
+  height: 300px;
+  object-fit: cover;
+}

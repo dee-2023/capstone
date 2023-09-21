@@ -51,7 +51,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="{{ route('userhomepage') }}"
+                                    <li><a class="dropdown-item" href="{{ route('home') }}"
                                         >
                                          {{ __('Dashboard') }}
                                      </a></li>
