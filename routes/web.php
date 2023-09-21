@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\PackageController;
 
@@ -21,6 +22,10 @@ Route::get('/contact', function () {return view('contact'); });
 Route::get('/blog', function () {return view('blog'); });
 Route::get('/packages', function () {return view('packages');});
 
+/*admin*/
+Route::get('/admin.users', [AdminController::class, 'usersview'])->name('users');
+
+
 /*Bookings*/
 Route::get('/bookings',[BookingController::class, 'index'])->name('bookings');
 Route::get('/bookings/book', [BookingController::class, 'book'])->name('booknow');
@@ -37,7 +42,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 
-// admin
+
 Route::prefix('admin')->middleware('auth')->group(function() {
 
 });

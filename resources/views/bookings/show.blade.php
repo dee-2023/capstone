@@ -17,6 +17,7 @@
         @method('DELETE')
         <button>Complete Booking</button>
     </form>
+    <a href="/bookings" class=""><-Back to Customer Bookings</a>
 </div>
-<a href="/bookings" class=""><-Back to Customer Bookings</a>
+
 @endsection

@@ -12,6 +12,7 @@ class BookingController extends Controller
       $bookings = Booking::all();
       if(Auth::user()->role == 'admin'){
         return view('bookings.index', ['bookings' => $bookings]);
+
     } else if(Auth::user()->role == 'user'){
       echo "You are not an admin";
         return view('home');
@@ -33,10 +34,10 @@ class BookingController extends Controller
         return view('bookings.book');
 
     } else if(Auth::user()->role == 'admin'){
-        echo "You are admin";
-        return view('bookings.index');
+        
+        return view('admin.index')->with('msgadmin', "Please login as User to Book a Package.");
       } else {
-        return view('bookings');
+        return view('login');
     }
 
   }

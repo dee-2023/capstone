@@ -8,10 +8,13 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
+                    <span class="messg">{{ session('message')}}</span>
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
+                        @else
+                        <span class="messg">{{ session('message')}}</span>
                     @endif
                     {{ __('You are logged in!') }}<br />
                     <a class="btn btn-primary" href="{{ route('booknow') }}">{{ __('Book a Tour') }}</a>

@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         if(Auth::user()->role == 'admin'){
-            return view('booking.index');
+            return view('admin.index');
         } else if(Auth::user()->role == 'user'){
             return view('home');
         
