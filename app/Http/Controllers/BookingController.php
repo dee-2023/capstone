@@ -42,14 +42,16 @@ class BookingController extends Controller
   }
 
 
-    public function store() {
-  
-      $inclusions = $request->input('inclusions', []); 
+    public function store(Request $request) {
+      $user = auth()->user();
+       
       $booking = new Booking();
+      $inclusions = $request->input('inclusions', []);
       $booking->cust_id = $user->id;
       $booking->name = $request->input('name');
       $booking->package = $request->input('package');
       $booking->booking_date = $request->input('booking_date');
+      
       $booking->inclusions = $inclusions;
 
         $booking->save();
