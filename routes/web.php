@@ -19,6 +19,7 @@ use App\Http\Controllers\PackageController;
 Route::get('/', function () {return view('welcome'); })->name('welcome');
 Route::get('/contact', function () {return view('contact'); });
 Route::get('/blog', function () {return view('blog'); });
+Route::get('/packages', function () {return view('packages');});
 
 /*Bookings*/
 Route::get('/bookings',[BookingController::class, 'index'])->name('bookings');
@@ -27,10 +28,6 @@ Route::post('/bookings', [BookingController::class, 'store'])->name('postbooking
 Route::get('/bookings/{id}', [BookingController::class, 'show']);
 Route::delete('/bookings/{id}', [BookingController::class, 'destroy']);
 
-/*Packages*/
-Route::get('/packages',[PackageController::class, 'index'])->name('packages');
-Route::post('/packages/upload', [PackageController::class, 'store']);
-Route::get('/packages/{id}', [PackageController::class, 'show']);
 
 Route::get('/shop', [HomeController::class, 'shop'])->name('shop');
 
