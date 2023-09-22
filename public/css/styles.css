@@ -164,3 +164,8 @@ margin-left: 4px;
   height: 300px;
   object-fit: cover;
 }
+
+.bookings_logo {
+  height: 50px;
+  margin: 10px;
+}

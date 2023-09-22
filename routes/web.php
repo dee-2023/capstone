@@ -25,7 +25,6 @@ Route::get('/packages', function () {return view('packages');});
 /*admin*/
 Route::get('/admin.users', [AdminController::class, 'usersview'])->name('users');
 
-
 /*Bookings*/
 Route::get('/bookings',[BookingController::class, 'index'])->name('bookings');
 Route::get('/bookings/book', [BookingController::class, 'book'])->name('booknow');
@@ -33,15 +32,9 @@ Route::post('/bookings', [BookingController::class, 'store'])->name('postbooking
 Route::get('/bookings/{id}', [BookingController::class, 'show']);
 Route::delete('/bookings/{id}', [BookingController::class, 'destroy']);
 
-
-Route::get('/shop', [HomeController::class, 'shop'])->name('shop');
-
 Auth::routes();
-
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-
-
+Route::get('/shop', [HomeController::class, 'shop'])->name('shop');
 
 Route::prefix('admin')->middleware('auth')->group(function() {
 

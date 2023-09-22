@@ -8,57 +8,54 @@ use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
-    public function index() {  
-      $bookings = Booking::all();
-      if(Auth::user()->role == 'admin'){
+  public function index() {  
+    $bookings = Booking::all();
+
+    if (auth()->check()) {
+      if (auth()->user()->role == 'user') {
+        echo "You are not an admin";
+
+      return view('home');
+      } elseif (auth()->user()->role == 'admin') {
         return view('bookings.index', ['bookings' => $bookings]);
-
-    } else if(Auth::user()->role == 'user'){
-      echo "You are not an admin";
-        return view('home');
-    
-    }
-      
-    }      
-      
-
-
-    public function show($id) {
-      $booking = Booking::findOrFail($id);
-        return view('bookings.show', ['booking' => $booking]);
       }
-
-    public function book() {
-      
-      if(Auth::user()->role == 'user'){
-        return view('bookings.book');
-
-    } else if(Auth::user()->role == 'admin'){
-        
-        return view('admin.index')->with('msgadmin', "Please login as User to Book a Package.");
-      } else {
-        return view('login');
     }
+    return redirect()->route('login')->with('authmsg', "Unauthorized access. Please login as Admin");   
+  }      
 
+  public function show($id) {
+    $booking = Booking::findOrFail($id);
+    
+      return view('bookings.show', ['booking' => $booking]);
   }
 
-
-    public function store(Request $request) {
-      $user = auth()->user();
-       
-      $booking = new Booking();
-      $inclusions = $request->input('inclusions', []);
-      $booking->cust_id = $user->id;
-      $booking->name = $request->input('name');
-      $booking->package = $request->input('package');
-      $booking->booking_date = $request->input('booking_date');
+  public function book() {
       
-      $booking->inclusions = $inclusions;
-
-        $booking->save();
-
-        return redirect('/bookings/book')->with('mssg', 'Booking submitted successfully!');
+    if (auth()->check()) {
+      if (auth()->user()->role == 'user') {
+        return view('bookings.book');
+      } elseif (auth()->user()->role == 'admin') {
+        return view('admin.index')->with('msgadmin', "Please login as User to Book a Package.");
+      }
     }
+    return redirect()->route('login')->with('authmsg', "Unauthorized access. Please login as Admin");
+    }
+
+  public function store(Request $request) {
+    $user = auth()->user();
+       
+    $booking = new Booking();
+    $inclusions = $request->input('inclusions', []);
+    $booking->cust_id = $user->id;
+    $booking->name = $request->input('name');
+    $booking->package = $request->input('package');
+    $booking->booking_date = $request->input('booking_date');  
+    $booking->inclusions = $inclusions;
+
+    $booking->save();
+
+    return redirect('/bookings/book')->with('mssg', 'Booking submitted successfully!');
+  }
 
     public function destroy($id) {
       $booking = Booking::findOrFail($id);
@@ -67,11 +64,10 @@ class BookingController extends Controller
       return redirect('/bookings');
     }
 
-    public function myBookings()
-{
+    public function myBookings(){
     $user = auth()->user();
     $bookings = Booking::where('cust_id', $user->id)->get(); 
 
     return view('/bookings/my-bookings', compact('bookings'));
-}
+    }
 }

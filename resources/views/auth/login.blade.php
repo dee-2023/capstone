@@ -9,6 +9,9 @@
 			</div>
             
 			<div class="card-body">
+                @if (session('message'))
+                    <div class="alert alert-danger">{{ session('authmsg') }}</div>
+                @endif
 				<form method="POST" action="{{ route('login') }}">
                     @csrf
 					<div class="input-group form-group">
