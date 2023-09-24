@@ -20,7 +20,7 @@
                             <a class="nav-link" href="{{ url('packages') }}">{{ __('Packages') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('blog') }}">{{ __('Blog') }}</a>
+                            <a class="nav-link" href="{{ url('blogs') }}">{{ __('Blogs') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('contact') }}">{{ __('Contact') }}</a>

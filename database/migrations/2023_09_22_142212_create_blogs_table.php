@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('packages', function (Blueprint $table) {
-            $table->id();
+        Schema::create('blogs', function (Blueprint $table) {
+            $table->string('title')->nullable();
+            $table->unsignedBigInteger('created_by'); 
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->text('description')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
-            $table->string('title');
-            $table->string('description');
-            $table->text('image_path');
-            $table->json('inclusions');
-
         });
     }
 
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('packages');
+        Schema::dropIfExists('blogs');
     }
 };

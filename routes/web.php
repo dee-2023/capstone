@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookingController;
@@ -19,7 +20,7 @@ use App\Http\Controllers\PackageController;
 
 Route::get('/', function () {return view('welcome'); })->name('welcome');
 Route::get('/contact', function () {return view('contact'); });
-Route::get('/blog', function () {return view('blog'); });
+/*Route::get('/blog', function () {return view('blog'); });         */
 Route::get('/packages', function () {return view('packages');});
 
 /*admin*/
@@ -43,3 +44,12 @@ Route::prefix('admin')->middleware('auth')->group(function() {
 Route::middleware(['auth'])->group(function () {
     Route::get('/my-bookings', [BookingController::class, 'myBookings'])->name('my-bookings');
 }); 
+
+/*Blog */
+
+Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');
+Route::get('/blogs/create', [BlogController::class, 'create'])->name('create-blog');
+Route::post('/blogs', [BlogController::class, 'store'])->name('store-blog');
+
+
+    
