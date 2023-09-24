@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -33,8 +34,8 @@ class HomeController extends Controller
     }
 
     public function shop()
-    {
-        return view('shop');
-    }
-
+{
+    $products = Product::all();
+    return view('index', compact('products')); // Update the view name to 'index'
+}
 }
