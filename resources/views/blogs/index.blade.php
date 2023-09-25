@@ -18,7 +18,7 @@
     @if (count($blogs) > 0)
       @foreach ($blogs as $blog)
       <div class="card mb-3">
-        <img src="{{ asset('images/'.$blog->image)}}" class="card-img-top" alt="...">
+        <img src="{{ asset('images/'.$blog->image)}}" class="card-img-top " alt="..." style="max-width:50%">
         <div class="card-body">
           <h5 class="card-title">{{$blog->title}}</h5>
           <p class="card-text">{{$blog->description}}</p>

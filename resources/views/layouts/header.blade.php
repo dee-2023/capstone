@@ -3,7 +3,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm navi">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ route('welcome') }}">
                     <img style="height:80px; margin:0;" src="../img/logo.jpg" alt="...">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -13,16 +13,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
+                        <li class="nav-item h5">
                             <a class="nav-link" href="{{ route('welcome') }}">{{ __('Home') }}</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item h5">
                             <a class="nav-link" href="{{ url('packages') }}">{{ __('Packages') }}</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item h5">
                             <a class="nav-link" href="{{ url('blogs') }}">{{ __('Blogs') }}</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item h5">
                             <a class="nav-link" href="{{ url('contact') }}">{{ __('Contact') }}</a>
                         </li>
                     </ul>

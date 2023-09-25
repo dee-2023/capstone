@@ -12,8 +12,12 @@
           <a href="/bookings/{{ $booking->id }}">{{ $booking->name }}</a>
       </div>
       @endforeach
-    
+            
     </div>
+          
   </div>
 </div>
+      
+   
 @endsection
+

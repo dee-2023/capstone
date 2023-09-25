@@ -3,39 +3,52 @@
 @section('content')
 
 
-<div class="container">
-    <h1>Book your Package</h1>
-    <span class="messg">{{ session('mssg')}}</span>
-    <form action="/bookings" method="POST">
-        @csrf
-        <label for="name">Full Name:</label>
-        <input type="text" name="name" id="name" required><br />
-        <label for="package">Package:</label>
-        <select name="package" id="package">
-            <option value="P1">P1</option>
-            <option value="P2">P2</option>
-            <option value="P3">P3</option>
-            <option value="P4">P4</option>
-          </select><br />
-          <label for="booking_date" min="{{ now()->toDateString() }}" required>Date: </label>
-        <input type="date" name="booking_date"><br />
-        <fieldset >
-            <label>Add Inclusions:</label><br />
-            <input type="checkbox" name="inclusions[]" value="breakfast">Breakfast<br />
-            <input type="checkbox" name="inclusions[]" value="lunch">Lunch<br />
-            <input type="checkbox" name="inclusions[]" value="dinner">Dinner<br />
-            <input type="checkbox" name="inclusions[]" value="airport transfer">Airport Transfer<br />
-            <input type="checkbox" name="inclusions[]" value="accomodation">Accomodation<br />
-            
-        </fieldset>
+<div class="container book-card">
+    
+            <div class="card book-card">
+                <div class="card-body">
+
+                    <h1>Book your Package</h1>
+                    <span class="text-success">{{ session('message')}}</span>
+                    <form action="/bookings" method="POST">
+                    @csrf
         
-        <input type="submit" value="Book Now">
-        <a class="btn btn-primary" href="{{ route('my-bookings') }}">{{ __('My Bookings') }}</a>
+                    <div class="mb-2">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{auth()->user()->name}}" disabled>
+                    </div>
+        <label for="package">Package:</label>
+            <select name="package" id="package" required>
+                <option selected>---</option>
+                <option value="Philippines">Philippines</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Japan">Japan</option>
+                <option value="Turkey">Turkey</option>
+                <option value="South Korea">South Korea</option>
+            </select><br />
+        <label for="booking_date" min="{{ now()->toDateString() }}" >Date: </label>
+        <input type="date" class="form-control" name="booking_date" required><br />
+        <fieldset >
+            
+            <label >Add Inclusions:</label>
+            <div class="form-check">
+            <input type="checkbox" name="inclusions[]" class="form-check-input" value="breakfast">Breakfast<br />
+            <input type="checkbox" name="inclusions[]" class="form-check-input" value="lunch">Lunch<br />
+            <input type="checkbox" name="inclusions[]" class="form-check-input" value="dinner">Dinner<br />
+            <input type="checkbox" name="inclusions[]" class="form-check-input" value="airport transfer">Airport Transfer<br />
+            <input type="checkbox" name="inclusions[]" class="form-check-input" value="accomodation">Accomodation<br />
+            </div>
+        </fieldset><br />
+ 
+        
+        <input type="submit" class="btn btn-primary" value="Book Now">
+        <a class="btn btn-success" href="{{ route('my-bookings') }}">{{ __('My Bookings') }}</a>
 
         
     </form>
 
-    
+</div>
+
 
 </div>
 @endsection

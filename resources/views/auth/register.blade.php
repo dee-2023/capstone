@@ -12,9 +12,9 @@
                         @csrf
 
                         <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
-                            </div>
+                           
+                                <span class="input-group-text input-i"><i class="fas fa-user"></i></span>
+                            
                             <input  type="text" name="name"
                                 class="form-control @error('name') is-invalid @enderror"
                                 placeholder="{{ __('Name') }}" 
@@ -30,9 +30,9 @@
                         </div><br />
 
                         <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
-                            </div>
+                            
+                                <span class="input-group-text input-i"><i class="fa-solid fa-envelope"></i></span>
+                            
                             <input id="email" type="email" name="email" 
                                 class="form-control @error('email') is-invalid @enderror" 
                                 placeholder="{{ __('Email Address') }}"
@@ -47,9 +47,9 @@
                         </div><br />
                         
                         <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
+                          
+                                <span class="input-group-text input-i"><i class="fas fa-key"></i></span>
+                            
                             <input id="password" type="password" name="password" 
                                 class="form-control @error('password') is-invalid @enderror" 
                                 placeholder="{{ __('Password') }}"
@@ -62,9 +62,9 @@
                         </div><br />
 
                         <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
+                            
+                                <span class="input-group-text input-i"><i class="fas fa-key"></i></span>
+                            
                             <input id="password-confirm" type="password" name="password_confirmation"
                                 class="form-control"
                                 placeholder="{{ __('Confirm Password') }}"

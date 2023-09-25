@@ -31,7 +31,7 @@ Route::get('/bookings',[BookingController::class, 'index'])->name('bookings');
 Route::get('/bookings/book', [BookingController::class, 'book'])->name('booknow');
 Route::post('/bookings', [BookingController::class, 'store'])->name('postbooking');
 Route::get('/bookings/{id}', [BookingController::class, 'show']);
-Route::delete('/bookings/{id}', [BookingController::class, 'destroy']);
+Route::delete('/bookings/{id}', [BookingController::class, 'destroy'])->name('bookings.destroy');;
 
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');

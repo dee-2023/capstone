@@ -5,7 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">
+                    <h6>Hello, {{ Auth::user()->name }}</h6></div>
 
                 <div class="card-body">
                     <span class="messg">{{ session('message')}}</span>
@@ -21,13 +22,11 @@
                     <a class="btn btn-primary" href="{{ route('shop') }}">{{ __('Shop') }}</a>
                     <a class="btn btn-primary" href="{{ route('my-bookings') }}">{{ __('My Bookings') }}</a>
                 </div>
-
-                
-        </div>
+            </div>
         </div>
     </div>
-    <div class="card-body">
-        
+  
+      
 </div>
 @endsection
 

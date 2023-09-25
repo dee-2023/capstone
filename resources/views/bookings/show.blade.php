@@ -2,7 +2,7 @@
 @section('title', "Bookings")
 @section('content')
 <div class="container">
-    <h1>Booking for {{ $booking->name }} </h1>
+    <h3>Booking for {{ $booking->name }} </h3>
     <p>Package: {{ $booking->package}} </p>
     <p>Date: {{ $booking->price}} </p>
     <p>Added inclusions</p>
@@ -15,7 +15,7 @@
     <form action="/bookings/{{ $booking->id }}" method="POST">
         @csrf
         @method('DELETE')
-        <button>Complete Booking</button>
+        <button onclick="return confirm('Are you sure you want to complete this booking?')">Complete Booking</button>
     </form>
     <a href="/bookings" class=""><-Back to Customer Bookings</a>
 </div>

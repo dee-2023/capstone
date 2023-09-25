@@ -12,9 +12,9 @@
        
         <div class="col-md-4">
             <div class="card">
-                <img src="public/img/ph.png" class="card-img-top" alt="...">
+                <img src="./img/ph.png" class="card-img-top" alt="...">
                 <div class="card-title-overlay">
-                    <h5 class="card-title">Philipphines</h5>
+                    <h5 class="card-title">Philippines</h5>
                 </div>
                 <div class="card-body">
                     <p class="card-text">8,390 accommodations</p>
@@ -30,7 +30,7 @@
         
         <div class="col-md-4">
             <div class="card">
-                <img src="public/img/thai.png" class="card-img-top" alt="...">
+                <img src="./img/thai.png" class="card-img-top" alt="...">
                 <div class="card-title-overlay">
                     <h5 class="card-title">Thailand</h5>
                 </div>
@@ -47,7 +47,7 @@
 
         <div class="col-md-4">
             <div class="card">
-                <img src="public/img/indo.png" class="card-img-top" alt="...">
+                <img src="./img/indo.png" class="card-img-top" alt="...">
                 <div class="card-title-overlay">
                     <h5 class="card-title">Indonesia</h5>
                 </div>
@@ -64,7 +64,7 @@
 
         <div class="col-md-4">
             <div class="card">
-                <img src="public/img/japan.jpg" class="card-img-top" alt="...">
+                <img src="./img/japan.jpg" class="card-img-top" alt="...">
                 <div class="card-title-overlay">
                     <h5 class="card-title">Japan</h5>
                 </div>
@@ -81,7 +81,7 @@
 
         <div class="col-md-4">
             <div class="card">
-                <img src="public/img/turkey.jpg" class="card-img-top" alt="...">
+                <img src="./img/turkey.jpg" class="card-img-top" alt="...">
                 <div class="card-title-overlay">
                     <h5 class="card-title">Turkey</h5>
                 </div>
@@ -99,7 +99,7 @@
         
         <div class="col-md-4">
             <div class="card">
-                <img src="public/img/seoul.jpg" class="card-img-top" alt="...">
+                <img src="./img/seoul.jpg" class="card-img-top" alt="...">
                 <div class="card-title-overlay">
                     <h5 class="card-title">South Korea</h5>
                 </div>

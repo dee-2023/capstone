@@ -20,7 +20,7 @@ class BookingController extends Controller
         return view('bookings.index', ['bookings' => $bookings]);
       }
     }
-    return redirect()->route('login')->with('authmsg', "Unauthorized access. Please login as Admin");   
+    return redirect()->route('login')->with('message', "Unauthorized access. Please login as Admin");   
   }      
 
   public function show($id) {
@@ -35,10 +35,10 @@ class BookingController extends Controller
       if (auth()->user()->role == 'user') {
         return view('bookings.book');
       } elseif (auth()->user()->role == 'admin') {
-        return view('admin.index')->with('msgadmin', "Please login as User to Book a Package.");
+        return view('admin.index')->with('message', "Please login as User to Book a Package.");
       }
     }
-    return redirect()->route('login')->with('authmsg', "Unauthorized access. Please login as Admin");
+    return redirect()->route('login')->with('message', "Unauthorized access. Please login as Admin");
     }
 
   public function store(Request $request) {
@@ -47,22 +47,23 @@ class BookingController extends Controller
     $booking = new Booking();
     $inclusions = $request->input('inclusions', []);
     $booking->cust_id = $user->id;
-    $booking->name = $request->input('name');
+    $booking->name = $user->name;
     $booking->package = $request->input('package');
     $booking->booking_date = $request->input('booking_date');  
     $booking->inclusions = $inclusions;
 
     $booking->save();
 
-    return redirect('/bookings/book')->with('mssg', 'Booking submitted successfully!');
+    return redirect('/bookings/book')->with('message', 'Booking submitted successfully!');
   }
 
     public function destroy($id) {
       $booking = Booking::findOrFail($id);
       $booking->delete();
 
-      return redirect('/bookings');
-    }
+      return redirect('/bookings')->with('message', 'Booking deleted successfully.');
+    
+  }
 
     public function myBookings(){
     $user = auth()->user();
