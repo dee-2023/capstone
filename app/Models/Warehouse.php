@@ -2,21 +2,28 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Warehouse extends Model
 {
     use HasFactory;
 
 
-    protected $table = 'products';
+    protected $table = 'warehouse';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
+    protected $fillable = [
+        'name',                  
+        'location',                      
+        'status',     
+    ];
 
-    protected $fillable = ['product_name', 'country', 'price'];
+   public $timestamps = true;
+    
 }

@@ -34,8 +34,8 @@ class HomeController extends Controller
     }
 
     public function shop()
-{
-    $products = Product::all();
-    return view('index', compact('products')); // Update the view name to 'index'
-}
+    {
+        $products = Product::all(); 
+        return view('shop.index', compact('products')); 
+    }
 }
