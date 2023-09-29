@@ -9,7 +9,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductDisplayController;
-use App\Http\Controllers\Admin\PackageController;
+
 use App\Http\Controllers\Admin\CategoryController;
 
 /*
