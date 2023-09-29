@@ -17,17 +17,16 @@
                         <label for="name" class="form-label">Name</label>
                         <input type="text" class="form-control" id="name" name="name" value="{{auth()->user()->name}}" disabled>
                     </div>
-        <label for="package">Package:</label>
-            <select name="package" id="package" required>
-                <option selected>---</option>
-                <option value="Philippines">Philippines</option>
-                <option value="Indonesia">Indonesia</option>
-                <option value="Japan">Japan</option>
-                <option value="Turkey">Turkey</option>
-                <option value="South Korea">South Korea</option>
+        <label for="package">Select Package:</label>
+
+            <select name="package_id" id="package_id" required>
+                <option selected>Select a Package</option>
+                @foreach ($packages as $package)
+                    <option value="{{ $package->id}}">{{ $package->title}} </option>
+                @endforeach
             </select><br />
-        <label for="booking_date" min="{{ now()->toDateString() }}" >Date: </label>
-        <input type="date" class="form-control" name="booking_date" required><br />
+        <label for="booking_date" >Date: </label>
+        <input type="date" class="form-control" name="booking_date" id="booking_date" required><br />
         <fieldset >
             
             <label >Add Inclusions:</label>
@@ -49,6 +48,12 @@
 
 </div>
 
-
+<script>
+   
+    var today = new Date();
+    today.setDate(today.getDate() + 5);
+    var minDate = today.toISOString().split('T')[0];
+    document.getElementById('booking_date').setAttribute('min', minDate);
+  </script>
 </div>
 @endsection

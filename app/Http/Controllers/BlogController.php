@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 class BlogController extends Controller
 {
-    
     public function index() {
         $blogs = Blog::orderBy('created_at', 'desc')->get();
         return view('blogs.index', ['blogs' => $blogs]);
@@ -25,16 +25,17 @@ class BlogController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
-            'image' =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            
         ]);
         // Handle file upload
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('image')) 
+        {
             $file = $request->file('image');
             $file_name = time() . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('images'), $file_name);
         } else {
             // Handle the case where no image is provided
-            return redirect()->back()->with('error', 'Please provide an image.');
+            return redirect()->back()->with('status', 'Image is required.');
         }
 
         $blog = new Blog();
@@ -45,8 +46,20 @@ class BlogController extends Controller
         $blog->image = $file_name;
 
         $blog->save();
-        return redirect()->route('blogs')->with('success', 'Blog created successfully.');
+        return redirect()->route('blogs')->with('status', 'Blog created successfully.');
+    }   
+    public function destroy($id)
+    {
+        $blog = Blog::findOrFail($id);
+        if($blog->image)
+        {
+            $path = 'images/'.$blog->image;
+            if(File::exists($path))
+            {
+                File::delete($path);
+            }
+        }
+        $blog->delete();
+        return redirect('blogs')->with('status', "Blog Deleted Successfully");
     }
-
-    
 }

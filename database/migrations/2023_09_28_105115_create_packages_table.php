@@ -13,12 +13,16 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('title');
-            $table->string('description');
-            $table->text('image_path');
-            $table->json('inclusions');
-
+            $table->unsignedBigInteger('cate_id'); 
+            $table->foreign('cate_id')->references('id')->on('categories');
+            $table->longText('description');
+            $table->string('image')->nullable();
+            $table->json('inclusions')->nullable();
+            $table->decimal('price', $precision = 8, $scale = 2);
+            $table->unsignedBigInteger('created_by'); 
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->timestamps();
         });
     }
 
