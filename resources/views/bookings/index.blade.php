@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('title', "Bookings")
 @section('content')
+
 <div class="container">
   <div class="flex-center position-ref full-height">
     <div class="content">
@@ -12,8 +13,10 @@
           <a href="/bookings/{{ $booking->id }}">{{ $booking->name }}</a>
       </div>
       @endforeach
-    
-    </div>
+            
+    </div>       
   </div>
 </div>
+
 @endsection
+

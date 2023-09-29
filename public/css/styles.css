@@ -1,9 +1,10 @@
 /* =======contacts========= */
 body{
   background-image: linear-gradient(79deg, #268f8e, #83dfe3, #f6f0fc 48%, #94a7a8);
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
 }
   .navi {
     background-image: linear-gradient(79deg, #268f8e 60%, #94a7a8);
@@ -20,10 +21,24 @@ body{
 
 .content {
 margin: auto 0;
-  padding-bottom: 100px; /* Height of the footer */
+
 }
 
+footer {
+  min-height: 100px; /* Adjust this as needed */
+  background-color: #94a7a8; 
+  color: #fff; 
+  position:relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center; 
+  margin-top: auto;
+}
 
+.footer-content {
+  margin: 0 auto; 
+  max-width: 600px;
+}
 
 /* =======Layout========*/
 .contact-head {
@@ -82,16 +97,16 @@ height: 80vh;
 }
 
 .logincard{
-height: 300px;
-margin-top: auto;
+height: 400px;
+margin-top: 10%;
 margin-bottom: auto;
 width: 350px;
 background-color: rgba(0,0,0,0.5) !important;
 }
 
 .registercard{
-  height: 400px;
-  margin-top: auto;
+  height: 500px;
+  margin-top: 5%;
   margin-bottom: auto;
   width: 350px;
   background-color: rgba(0,0,0,0.5) !important;
@@ -102,10 +117,8 @@ color: white;
 }
 
 
-.input-group-prepend span{
-width: 50px;
+.input-i {
 background-color: #268f8e;
-color: black;
 border:0 !important;
 }
 
@@ -131,6 +144,7 @@ margin-right: 5px;
 color: black;
 background-color: #FFC312;
 width: 100px;
+align-self: center;
 }
 
 .login_btn:hover{
@@ -152,9 +166,22 @@ margin-left: 4px;
   object-fit: cover;
 }
 
+.bookings_logo {
+  height: 50px;
+  margin: 10px;
+}
 
+/*====blog====*/
+.wrapper {
+  max-width: 1200px; 
+  margin: 0 auto;   
+  padding: 20px;    
+  background-color: rgba(255, 255, 255, 0.30); 
+  border: 1px solid #ccc;  
+  margin-left: auto;
+  margin-right: auto;
+}
 /* =======homepage carousel========*/
-
 
 .carousel-container {
   width: 100%;
@@ -319,9 +346,6 @@ label {
   margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
 select {
   width: 100%;
   padding: 10px;
@@ -437,4 +461,19 @@ button:hover {
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+
+/*book */
+.book-card {
+  width: fit-content;
+  background-color: rgba(255, 255, 255, 0.10); 
+}
+
+.mybookings-card {
+  width: fit-content;
+  background-color: rgba(255, 255, 255, 0.40); 
+  
+}
+.inclusion-height {
+  min-height: 180px;
 }

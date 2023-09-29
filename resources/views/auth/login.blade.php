@@ -2,22 +2,20 @@
 
 @section('content')
 <div class="container-fluid loginbody">
-	<div class="d-flex justify-content-center h-100">
+	<div class="d-flex justify-content-center h-50">
 		<div class="logincard card">
 			<div class="card-header logincard-header">
 				<h3>{{ __('Login') }}</h3>	
 			</div>
             
 			<div class="card-body">
-                @if (session('message'))
-                    <div class="alert alert-danger">{{ session('authmsg') }}</div>
-                @endif
+                
 				<form method="POST" action="{{ route('login') }}">
                     @csrf
 					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
-						</div>
+						
+							<span class="input-group-text input-i"><i class="fa-solid fa-envelope"></i></span>
+						
 						<input  type="email" name="email"
                                 class="form-control @error('email') is-invalid @enderror" 
                                 placeholder="{{ __('Email Address') }}" 
@@ -32,9 +30,9 @@
                         @enderror
 					</div><br />
 					<div class="input-group form-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fas fa-key"></i></span>
-						</div>
+						
+							<span class="input-group-text input-i"><i class="fas fa-key"></i></span>
+						
 						<input  type="password" name="password"
                                 class="form-control @error('password') is-invalid @enderror" 
                                 required 
@@ -61,7 +59,7 @@
                         </button>
 					</div>
 				</form>
-			</div>
+			
 			<div class="card-footer">
 				
 				@if (Route::has('password.request'))
@@ -70,6 +68,7 @@
                     </a>
                 @endif
 			</div>
+        </div>
 		</div>
 	</div>
 </div>

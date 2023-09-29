@@ -1,16 +1,5 @@
 @extends('layouts.app')
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Website</title>
-    <link rel="stylesheet" href="public/css/styles.css">
-    
-
-</head>
-<body>
 <header class="site-header">
     <h1 class="header-title">Welcome to Our Travel Website</h1>
 </header>
@@ -20,19 +9,19 @@
     <div class="carousel-container">
         <div class="carousel-slides">
             <div class="carousel-slide">
-                <img src="public/img/carousel1.jpg">
+                <img src="./img/carousel1.jpg">
             </div>
             <div class="carousel-slide">
-                <img src="public/img/carousel2.jpg">
+                <img src="../img/carousel2.jpg">
             </div>
             <div class="carousel-slide">
-                <img src="public/img/carousel3.jpg">
+                <img src="../img/carousel3.jpg">
             </div>
             <div class="carousel-slide">
-                <img src="public/img/carousel4.jpg">
+                <img src="../img/carousel4.jpg">
             </div>
             <div class="carousel-slide">
-                <img src="public/img/carousel5.jpg">
+                <img src="../img/carousel5.jpg">
             </div>">
             </div>
 
@@ -45,19 +34,19 @@
     <div class="tour-cards">
         <div class="tour-card">
             <a href="#" data-description="Description for Tours and Attraction">
-                <img src="{{ asset('public/img/tagaytay.png') }}" alt="package 1">
+                <img src="{{ asset('../img/tagaytay.png') }}" alt="package 1">
                 <h3>Tours and Attraction</h3>
             </a>
         </div>
         <div class="tour-card">
             <a href="#" data-description="Description for Fun activities">
-                <img src="{{ asset('public/img/kyoto.png') }}" alt="package 2">
+                <img src="{{ asset('../img/kyoto.png') }}" alt="package 2">
                 <h3>Fun activities</h3>
             </a>
         </div>
         <div class="tour-card">
             <a href="#" data-description="Description for Travel Insurance">
-                <img src="{{ asset('public/img/insurance.png') }}" alt="package 3">
+                <img src="{{ asset('/img/insurance.png') }}" alt="package 3">
                 <h3>Travel Insurance</h3>
             </a>
         </div>
@@ -168,8 +157,7 @@ setInterval(nextSlide, 3000);
 </div>
 
 
-</body>
-</html>
+
 @endsection
 
 
