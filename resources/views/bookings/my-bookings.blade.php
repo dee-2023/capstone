@@ -10,7 +10,8 @@
     <div class="col-sm-4 mb-3 mb-sm-0 ">
         <div class="card mybookings-card" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">Package: {{ $booking->package_id}}</h5>
+                
+                <h5 class="card-title" value="{{ $booking->package_id}}">Package: {{ $booking->package_id}} </h5>
                 <h6 class="card-text">Booking ID: #{{ $booking->id }}</h6>
             </div>
             <ul class="list-group list-group-flush">
@@ -39,6 +40,9 @@
             </div>
         </div>
     </div>
+    @if ($booking->package)
+        <pre>{{ var_dump($booking->package->title) }}</pre>
+    @endif
     @endforeach
 </div>
     </div>

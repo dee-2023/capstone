@@ -29,6 +29,10 @@ class Package extends Model
     {
         return $this->belongsTo(Category::class, 'created_by', 'id');
     }
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
     
 
 }

@@ -31,7 +31,12 @@ class BookingController extends Controller
   }
 
   public function book() {
-      
+$user = auth()->user();
+        $request->validate([
+            'package_id' => 'required',
+            'booking_date' => 'required',            
+        ]);
+    
     $packages = Package::all();
     if (auth()->check()) {
       if (auth()->user()->role == 'user') {
@@ -44,6 +49,10 @@ class BookingController extends Controller
     }
 
   public function store(Request $request) {
+    $request->validate([
+      'package_id' => 'required',
+      'booking_date' => 'required',      
+  ]);
     
     $user = auth()->user();
        
@@ -71,8 +80,7 @@ class BookingController extends Controller
     public function myBookings(){
       $package = Package::all();
     $user = auth()->user();
-    $bookings = Booking::where('cust_id', $user->id)->get(); 
-    
+    $bookings = Booking::where('cust_id', $user->id)->get();     
 
     return view('/bookings/my-bookings', compact('bookings'));
     }

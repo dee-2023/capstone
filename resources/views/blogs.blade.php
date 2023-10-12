@@ -6,8 +6,6 @@
   </div>
     
   <hr>
-  <!-- Message if a blog is posted successfully -->
-  
     @if (count($blogs) > 0)
       @foreach ($blogs as $blog)
       <div class="card mb-3 w-50 mx-auto">

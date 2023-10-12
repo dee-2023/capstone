@@ -8,7 +8,7 @@
   
     
   <hr>
-  <a class="btn btn-success float-end me-auto" href="{{ route('create-blog') }}" role="button">Add Blog</a>
+  <a class="btn btn-success float-end me-auto" href="{{ route('create-blog') }}" role="button">Add Blog</a><br />
   
     @if (count($blogs) > 0)
       @foreach ($blogs as $blog)

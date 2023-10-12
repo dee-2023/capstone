@@ -22,14 +22,14 @@
             <select name="package_id" id="package_id" required>
                 <option selected>Select a Package</option>
                 @foreach ($packages as $package)
-                    <option value="{{ $package->id}}">{{ $package->title}} </option>
+                    <option name="package_id" value="{{ $package->id}}">{{ $package->title}} </option>
                 @endforeach
             </select><br />
         <label for="booking_date" >Date: </label>
         <input type="date" class="form-control" name="booking_date" id="booking_date" required><br />
         <fieldset >
             
-            <label >Add Inclusions:</label>
+            <label >Add Inclusions:(optional)</label>
             <div class="form-check">
             <input type="checkbox" name="inclusions[]" class="form-check-input" value="breakfast">Breakfast<br />
             <input type="checkbox" name="inclusions[]" class="form-check-input" value="lunch">Lunch<br />

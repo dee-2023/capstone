@@ -60,6 +60,9 @@
                       <li class="nav-item">
                         <a class="nav-link" href="{{ url('categories') }}">{{ __('Categories') }}</a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ url('shop') }}">{{ __('Shop') }}</a>
+                  </li>
                         
                     </ul>
 

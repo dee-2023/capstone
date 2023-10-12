@@ -15,11 +15,15 @@
 
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" ></script>
+    
+    
     <script src="https://kit.fontawesome.com/db948196a7.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap5.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}" rel="stylesheet">
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -48,7 +52,7 @@
                             <a class="nav-link" href="{{ route('packages') }}">{{ __('Packages') }}</a>
                         </li>
                         <li class="nav-item h5">
-                            <a class="nav-link" href="{{ url('blogs') }}">{{ __('Blogs') }}</a>
+                            <a class="nav-link" href="{{ route('blogpost') }}">{{ __('Blogs') }}</a>
                         </li>
                         <li class="nav-item h5">
                             <a class="nav-link" href="{{ url('contact') }}">{{ __('Contact') }}</a>
@@ -133,6 +137,6 @@
     </div>
   </div>
 </footer>
-
+<script src="{{ asset('frontend/js/bootstrap.bundle.min.js')}}"></script>
 </body>
 </html>

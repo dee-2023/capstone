@@ -1,0 +1,41 @@
+Build e-Commerce website using Laravel
+- download composer from Chrome
+- enter command in git bash
+    $ composer create-project laravel/laravel example-app   //replace "example-app" with the name of your project
+- open the created folder in vscode and run this in terminal:
+    $ php artisan serve
+- laravel page should be available on 'localhost:8000'
+-
+SETUP Database
+- create db in mySQL
+- go to .env file and edit:
+    DB_DATABASE : 'name of your database'
+    DB_PORT : 3306
+- restart your server:
+    $ php artisan serve
+- go to app/PRoviders/AppServiceProvider.php and edit:
+    public function boot()                              
+    {
+        Schema::defaultStringLength(191)                -this will auto-set string length to 191 by default
+    }
+    - RC 'Schema' > Import class
+
+CREATE AUTH SYSTEM 
+- install packege in terminal:
+    $ composer require laravel/ui
+    $ php artisan ui:auth                       expected msg: Authentication scaffolding generated successfully.
+- check if 'auth' folder is created in resources > views > auth
+
+EXPORT BOOTSTRAP 
+folder  public/frontend/css/bootstrap5.css
+        public/frontend/js/custom.css
+        public/frontend/js/bootstrap.bundle.min.js
+
+
+MIGRATE DATABASE 
+    $ php artisan MIGRATE               - all migration will run 
+
+MAKE ADMIN MIDDLEWARE
+- ADD 'ROLE' COLUMN IN USER TABLE
+    $ php artisan make:middleware AdminMiddleware
+file is created in App/Http/Middleware/AdminMiddleware.php

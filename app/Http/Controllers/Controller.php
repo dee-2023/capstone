@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Package;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -18,6 +19,7 @@ class Controller extends BaseController
     }
     public function blogspublic()
     {
+        $blogs = Blog::orderBy('created_at', 'desc')->get();
         $blogs = Blog::all();
         return view('blogs', compact('blogs'));
     }

@@ -14,6 +14,7 @@ class PackageController extends Controller
 
     public function index()
     {
+        $packages = Package::orderBy('created_at', 'desc')->get();
         $packages = Package::all();
         return view('admin.package.index', compact('packages'));
     }
