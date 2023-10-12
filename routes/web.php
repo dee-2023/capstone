@@ -7,9 +7,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\PackageController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ProductDisplayController;
-
 use App\Http\Controllers\Admin\CategoryController;
 
 /*
@@ -78,20 +75,6 @@ Route::middleware(['auth', 'isAdmin'])->group(function() {
 
 /*Blog */
 
-
-
-/*shop crud */
-
-Route::get('/shop', [ProductController::class, 'index'])->name('shop.index');
-Route::get('/shop/index', [ProductController::class, 'index'])->name('product.index');
-Route::get('/shop/create', [ProductController::class, 'create'])->name('create');
-Route::post('/shop/store', [ProductController::class, 'store'])->name('store'); 
-Route::get('/shop/edit/{id}', [ProductController::class, 'edit'])->name('edit'); 
-Route::get('/shop/delete/{id}', [ProductController::class, 'delete'])->name('delete'); 
-Route::get('/shop/view/{id}', [ProductController::class, 'view'])->name('view');
-Route::put('/products/{id}', [ProductController::class, 'update'])->name('product.update');
-Route::get('/shop', [HomeController::class, 'shop'])->name('shop');
-Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
 
 
 

@@ -31,12 +31,7 @@ class BookingController extends Controller
   }
 
   public function book() {
-$user = auth()->user();
-        $request->validate([
-            'package_id' => 'required',
-            'booking_date' => 'required',            
-        ]);
-    
+      
     $packages = Package::all();
     if (auth()->check()) {
       if (auth()->user()->role == 'user') {
