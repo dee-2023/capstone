@@ -5,7 +5,7 @@
 </header>
 
     <section class="featured-destinations">
-    <h2>Featured Destinations</h2>
+    <h2 class="section-title">Featured Destinations</h2>
     <div class="carousel-container">
         <div class="carousel-slides">
             <div class="carousel-slide">

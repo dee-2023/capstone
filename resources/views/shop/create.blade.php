@@ -5,7 +5,7 @@
 <div class="container">
     <h2>Create a New Product</h2>
 
-    <form method="POST" action="{{ route('products.store') }}">
+    <form method="POST" action="{{ route('shop.store') }}">
         @csrf
         <!-- Add form fields for product name, category, etc. -->
         <div class="form-group">
@@ -24,3 +24,4 @@
     </form>
 </div>
 @endsection
+
